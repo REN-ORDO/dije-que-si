@@ -1,0 +1,18 @@
+/* WebGL layer: fills the scene box, sits above back doodles, below cards. */
+.host {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Keep the CSS phone in the layout (it sizes the scene on mobile) but hide
+   it once the 3D phone has drawn its first frame. */
+.scene[data-3d="ready"] :global(.phone) {
+  visibility: hidden;
+}

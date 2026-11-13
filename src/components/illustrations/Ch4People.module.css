@@ -1,0 +1,31 @@
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+@media (min-width: 900px) {
+  .svg {
+    max-height: 20vh;
+  }
+}
+.svg path {
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ghost {
+  stroke: #aaa49c;
+  stroke-opacity: 0.2;
+}
+.on {
+  opacity: 0;
+}
+.ink {
+  stroke: #f4f1ec;
+  stroke-opacity: 0.85;
+}
+.accent {
+  stroke: #7c83ff;
+}

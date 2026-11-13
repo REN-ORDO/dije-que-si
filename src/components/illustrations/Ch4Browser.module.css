@@ -1,0 +1,53 @@
+.wrap {
+  perspective: 900px;
+}
+.frame {
+  border: 1.75px solid rgb(244 241 236 / 0.85);
+  border-radius: 12px 14px 11px 13px / 13px 11px 14px 12px;
+  background: #1e1e21;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  box-shadow: 0 30px 60px -34px rgb(0 0 0 / 0.8);
+}
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-bottom: 1.75px solid rgb(170 164 156 / 0.7);
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1.5px solid #aaa49c;
+  flex: none;
+}
+.pill {
+  margin-left: 6px;
+  flex: 1;
+  min-width: 0;
+  padding: 1px 10px;
+  border: 1.5px solid rgb(170 164 156 / 0.7);
+  border-radius: 99px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: #aaa49c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1909 / 889;
+  object-fit: cover;
+  object-position: top;
+}
+.empty {
+  aspect-ratio: 1909 / 889;
+  border: 1.5px dashed rgb(170 164 156 / 0.5);
+  margin: 6px;
+}

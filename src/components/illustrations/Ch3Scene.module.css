@@ -1,0 +1,157 @@
+/* Chapter 3 scene: the .tokens box becomes a 5:6 stage with doodles around the stages. */
+.root:global(.tokens) {
+  width: min(100%, 600px, 66vh);
+  height: auto;
+  aspect-ratio: 5 / 6;
+}
+.root .layer {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  translate: none;
+  overflow: visible;
+  pointer-events: none;
+}
+.draw {
+  stroke-dasharray: 1;
+}
+.pop {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Stage positions (percent of the stage). Card sizes stay in px. */
+.root .composer {
+  left: 40%;
+  top: 33%;
+  width: min(72%, 420px);
+  translate: -50% -50%;
+  padding: 16px 18px 14px;
+  border-radius: 16px;
+  background: #18181b;
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 80px -40px rgb(0 0 0 / 0.7);
+}
+.root :global(.editor) {
+  left: 50%;
+  top: 54%;
+  width: min(88%, 500px);
+}
+.root :global(.zip) {
+  left: 62%;
+  top: 76%;
+}
+.root :global(.sent) {
+  left: 36%;
+  top: 36%;
+}
+
+/* Composer (AI-builder style prompt window) + battery */
+.promptRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 0.9vw, 0.82rem);
+  color: #f4f1ec;
+  min-height: 1.4em;
+}
+.promptMark {
+  color: #aaa49c;
+}
+.promptText {
+  display: inline-block;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+}
+.cursor {
+  width: 1.5px;
+  height: 1.1em;
+  margin-left: -4px;
+  background: #f4f1ec;
+  animation: blink 1.1s steps(2, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+.skels {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+.skel {
+  position: relative;
+  height: 8px;
+  border-radius: 99px;
+  background: #2a2a2f;
+  overflow: hidden;
+  transform-origin: 0 50%;
+}
+.skel:nth-child(1) {
+  width: 94%;
+}
+.skel:nth-child(2) {
+  width: 78%;
+}
+.skel:nth-child(3) {
+  width: 58%;
+}
+.shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(124 131 255 / 0.55), transparent);
+  translate: -100% 0;
+}
+.footHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: #aaa49c;
+}
+.pct {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f4f1ec;
+  font-variant-numeric: tabular-nums;
+}
+.cells {
+  display: flex;
+  gap: 3px;
+  margin-top: 8px;
+}
+.cell {
+  flex: 1;
+  height: 14px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #8a90ff, #5a60d6);
+}
+.stamp {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  translate: -50% -50%;
+  padding: 5px 14px;
+  border: 2px solid #f4f1ec;
+  border-radius: 6px;
+  background: rgb(24 24 27 / 0.92);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4f1ec;
+  white-space: nowrap;
+  opacity: 0;
+}

@@ -1,0 +1,50 @@
+/* Chapter 2 scene: bubbles square on top, figure + thought strip below. */
+.scene {
+  position: relative;
+  width: min(100%, 560px, 60vh);
+  aspect-ratio: 4 / 5;
+}
+.scene :global(.bubbles) {
+  width: 100%;
+}
+.layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.over {
+  z-index: 3;
+}
+.draw {
+  stroke-dasharray: 1;
+}
+.pop {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.thought {
+  position: absolute;
+  left: 80%;
+  top: 90.7%;
+  width: 24%;
+  translate: -50% -50%;
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, 0.95vw, 0.85rem);
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: #f4f1ec;
+}
+.rays {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+}

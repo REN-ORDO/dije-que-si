@@ -1,0 +1,28 @@
+.deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.underline,
+.sparkle {
+  position: absolute;
+  overflow: visible;
+}
+.underline path {
+  fill: none;
+  stroke: #7c83ff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sparkle path {
+  fill: none;
+  stroke: #f4f1ec;
+  stroke-opacity: 0.8;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sparkle {
+  transform-box: fill-box;
+  transform-origin: center;
+}

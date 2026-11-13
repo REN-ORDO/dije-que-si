@@ -1,0 +1,37 @@
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+@media (min-width: 900px) {
+  .svg {
+    max-height: 30vh;
+  }
+}
+.svg path {
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ink {
+  stroke: #f4f1ec;
+  stroke-opacity: 0.85;
+}
+.muted {
+  stroke: #aaa49c;
+  stroke-opacity: 0.7;
+}
+.accent {
+  stroke: #7c83ff;
+}
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  fill: #aaa49c;
+}
+.labelAccent {
+  fill: #7c83ff;
+}

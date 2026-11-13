@@ -1,0 +1,103 @@
+/* Scene-level rules (applied to the .phone-scene root) */
+.scene {
+  /* Cards, arrow and underline are laid out against the scene box itself so
+     they can never leave it, whatever the column width. */
+  --ci: clamp(8px, 3cqi, 24px);
+  container-type: inline-size;
+  min-width: 0;
+  max-width: 100%;
+}
+.scene :global(.phone) {
+  background: linear-gradient(145deg, #2b2b30 0%, #0b0b0c 30%, #050506 65%, #1c1c20 100%);
+  box-shadow:
+    inset 0 0 0 1.5px #4a4a52,
+    inset 0 0 0 3px #08080a,
+    0 60px 120px -40px rgb(0 0 0 / 0.9),
+    0 0 120px -20px rgb(124 131 255 / 0.25);
+}
+.scene :global(.float-card.tagline),
+.scene :global(.float-card.remaining) {
+  max-width: min(58%, 16rem);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  padding: 10px 14px;
+  line-height: 1.2;
+}
+.scene :global(.float-card.tagline) {
+  left: var(--ci);
+  top: var(--ci);
+  right: auto;
+  bottom: auto;
+  font-size: clamp(0.92rem, 0.8rem + 1.1cqi, 1.3rem);
+}
+.scene :global(.float-card.remaining) {
+  right: var(--ci);
+  bottom: calc(var(--ci) + 16px);
+  left: auto;
+  top: auto;
+  font-size: clamp(1.05rem, 0.85rem + 1.9cqi, 1.75rem);
+}
+@media (max-width: 899px) {
+  .scene {
+    height: auto;
+    min-height: 0;
+    padding: 84px 0;
+  }
+  .scene :global(.phone) {
+    width: min(240px, 62vw);
+  }
+}
+
+/* Doodles */
+.item {
+  position: absolute;
+  pointer-events: none;
+}
+.drift {
+  display: block;
+}
+.item svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.item path {
+  fill: none;
+  stroke: #f4f1ec;
+  stroke-opacity: 0.85;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.item .muted {
+  stroke: #aaa49c;
+  stroke-opacity: 0.7;
+}
+.item .accent {
+  stroke: #7c83ff;
+  stroke-opacity: 1;
+}
+.item .thick {
+  stroke-width: 3.2;
+}
+
+.receipt { left: 2%; bottom: 24%; width: clamp(56px, 15cqi, 84px); z-index: 0; }
+.eye { right: 2%; top: 26%; width: clamp(56px, 15cqi, 84px); z-index: 3; }
+.arrow {
+  right: calc(var(--ci) + 10%);
+  bottom: calc(var(--ci) + 100px);
+  width: clamp(56px, 14cqi, 90px);
+  z-index: 5;
+}
+.underline {
+  right: var(--ci);
+  bottom: max(2px, calc(var(--ci) - 6px));
+  width: min(52%, 220px);
+  z-index: 5;
+}
+
+@media (max-width: 899px) {
+  .receipt { left: 0; bottom: 24%; }
+  .eye { right: 0; top: 30%; }
+}

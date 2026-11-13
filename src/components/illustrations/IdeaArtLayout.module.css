@@ -1,0 +1,65 @@
+/* Shared layout for the WordReveal illustrations (path / door). */
+.art {
+  pointer-events: none;
+  width: 100%;
+  height: min(40vh, 96vw);
+  margin-top: 5vh;
+  align-self: stretch;
+}
+
+.art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ink,
+.muted,
+.accent {
+  fill: none;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ink {
+  stroke: #f4f1ec;
+  stroke-opacity: 0.85;
+}
+.muted {
+  stroke: #aaa49c;
+}
+.accent {
+  stroke: #7c83ff;
+}
+.soft {
+  fill: rgb(124 131 255 / 0.16);
+}
+.surface {
+  fill: #1e1e21;
+}
+.pop {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (min-width: 900px) and (min-height: 560px) {
+  .art {
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    width: 40vw;
+    height: 76vh;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+  .ink,
+  .muted,
+  .accent {
+    stroke-width: 1.75;
+  }
+  /* Keep the statement legible: it never runs under the illustration. */
+  .hasArt :global(.reveal-text) {
+    max-width: 52vw;
+  }
+}
