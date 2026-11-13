@@ -260,13 +260,13 @@ type Spec = {
 };
 
 const SPECS: Spec[] = [
-  { build: buildSeat, desk: [0.8, 0.14, 0, 0.95], mob: [0.52, 0.85, 0, 1.0], rot: [0.18, -0.7, 0.04], spin: 0.1, amp: 0.1, speed: 0.7 },
-  { build: buildLaptop, desk: [0.64, -0.56, -0.5, 0.92], mob: [0.45, -0.84, -0.5, 0.95], rot: [0.38, -0.5, 0], spin: 0.06, amp: 0.09, speed: 0.6 },
-  { build: buildBraces, desk: [0.96, 0.52, -1.2, 0.72], mob: [-0.52, 0.86, -1, 0.9], rot: [0.1, 0.35, 0.05], spin: 0.12, amp: 0.08, speed: 0.8 },
+  { build: buildSeat, desk: [0.8, 0.14, 0, 0.95], mob: [0.05, 0.52, 0, 0.9], rot: [0.18, -0.7, 0.04], spin: 0.1, amp: 0.1, speed: 0.7 },
+  { build: buildLaptop, desk: [0.64, -0.56, -0.5, 0.92], mob: [0.08, -0.56, -0.5, 0.9], rot: [0.38, -0.5, 0], spin: 0.06, amp: 0.09, speed: 0.6 },
+  { build: buildBraces, desk: [0.96, 0.52, -1.2, 0.72], mob: [-0.6, 0.46, -1, 0.7], rot: [0.1, 0.35, 0.05], spin: 0.12, amp: 0.08, speed: 0.8 },
   { build: buildZip, desk: [0.9, -0.22, -1.5, 0.85], rot: [-0.2, 0.5, 0.25], spin: 0.08, amp: 0.1, speed: 0.55 },
-  { build: buildPhone, desk: [0.22, -0.74, -1, 0.85], mob: [-0.55, -0.85, -1, 0.85], rot: [0.2, 0.45, -0.18], spin: 0.1, amp: 0.1, speed: 0.75 },
-  { build: (m) => buildCoin(m), desk: [0.98, -0.64, 0.5, 0.6], mob: [0.0, -0.93, 0, 0.55], rot: [0.5, 0, 0.3], spin: 0.5, amp: 0.1, speed: 0.9 },
-  { build: (m) => buildCoin(m), desk: [0.42, 0.7, -1, 0.45], mob: [0.9, 0.55, -1, 0.42], rot: [0.9, 0.3, 0], spin: 0.6, amp: 0.08, speed: 1.0 },
+  { build: buildPhone, desk: [0.22, -0.74, -1, 0.85], mob: [-0.6, -0.5, -1, 0.72], rot: [0.2, 0.45, -0.18], spin: 0.1, amp: 0.1, speed: 0.75 },
+  { build: (m) => buildCoin(m), desk: [0.98, -0.64, 0.5, 0.6], mob: [0.62, -0.42, 0, 0.5], rot: [0.5, 0, 0.3], spin: 0.5, amp: 0.1, speed: 0.9 },
+  { build: (m) => buildCoin(m), desk: [0.42, 0.7, -1, 0.45], mob: [0.62, 0.62, -1, 0.42], rot: [0.9, 0.3, 0], spin: 0.6, amp: 0.08, speed: 1.0 },
   { build: (m) => buildCoin(m, true), desk: [0.76, -0.86, -0.5, 0.5], rot: [0.4, 0, -0.4], spin: 0.55, amp: 0.1, speed: 0.85 },
   { build: (m) => buildCoin(m), desk: [-0.9, -0.82, -1, 0.5], rot: [0.7, 0.2, 0.2], spin: 0.4, amp: 0.08, speed: 0.8 },
   { build: buildTorus, desk: [0.66, 0.74, -1.2, 0.72], rot: [1.0, 0.4, 0], spin: 0.25, amp: 0.1, speed: 0.65 },

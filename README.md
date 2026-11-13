@@ -84,6 +84,7 @@ blocks: [
 - `others`: lo que sabían otros. Cada elemento es una burbuja grande.
 - `mine`: texto inicial de tu burbuja pequeña.
 - `mineGrown`: texto de la burbuja cuando crece.
+- `thought`: el pensamiento de la nube ("¿Qué hago yo aquí?").
 
 ### Capítulo 3: editor
 
@@ -93,6 +94,12 @@ blocks: [
 
 - `milestones`: lista de hitos, cada uno con `label` y `note`.
 - `stat`: contador con `value` (número), `suffix` y `label`.
+- `roles`: escalones de la ilustración de roles.
+- `screenshot`: captura de DerbiPlay en `public/` (o `null` para ocultarla).
+
+### La idea: frases resaltadas
+
+En `idea.text`, las frases entre `*asteriscos*` salen en serif itálica índigo con subrayado dibujado. `idea.marquee` son las palabras gigantes que se deslizan de fondo.
 
 ### Textos alternativos
 
@@ -107,7 +114,7 @@ blocks: [
 screenshot: "/saldo.png",
 ```
 
-Mientras `screenshot` sea `null`, se muestra un placeholder marcado.
+Mientras `screenshot` sea `null`, se muestra un placeholder marcado. La captura actual tiene difuminados los nombres de los movimientos.
 
 ## Colores y tipografías
 
@@ -126,20 +133,24 @@ Mientras `screenshot` sea `null`, se muestra un placeholder marcado.
 ```
 src/
 ├── app/
-│   ├── layout.tsx          Fuentes, metadatos e idioma (es)
-│   ├── page.tsx            Orden de las secciones
-│   └── globals.css         Tokens de color y estilos
+│   ├── layout.tsx            Fuentes, metadatos e idioma (es)
+│   ├── page.tsx              Orden de las secciones
+│   ├── opengraph-image.tsx   Imagen para compartir (también twitter-image.tsx)
+│   └── globals.css           Tokens de color y estilos
 ├── components/
-│   ├── chapters/           Capítulos (Chapter4, Chapter5, ...)
-│   ├── scenes/             Escenas reutilizables (Phone, Timeline)
-│   ├── ChapterLayout.tsx   Diseño común de los capítulos
-│   ├── Experience.tsx      Scroll suave, teclado, progreso e índice
-│   ├── Hero.tsx            Portada
-│   ├── WordReveal.tsx      Texto que se revela palabra por palabra
-│   └── Final.tsx           Cierre
+│   ├── chapters/             Un archivo por capítulo (Chapter1 … Chapter6)
+│   ├── scenes/               Escenas animadas (asientos, burbujas, tokens, línea de tiempo, iPhone 2D/3D)
+│   ├── illustrations/        Ilustraciones de línea (ver STYLE.md)
+│   ├── companion/            Objeto 3D que acompaña la historia
+│   ├── HeroScene3D.tsx       Escena 3D de la portada (Three.js)
+│   ├── ChapterLayout.tsx     Diseño común de los capítulos
+│   ├── Experience.tsx        Scroll suave, teclado, progreso e índice
+│   ├── Hero.tsx              Portada
+│   ├── WordReveal.tsx        Texto que se revela palabra por palabra
+│   └── Final.tsx             Cierre
 ├── lib/
-│   ├── motion.ts           Utilidades de GSAP, Lenis y paradas de scroll
-│   └── useScene.ts         Hook que conecta la animación con cada escena
-└── content.ts              Todos los textos
-public/                     Imágenes, por ejemplo saldo.png
+│   ├── motion.ts             Utilidades de GSAP, Lenis y paradas de scroll
+│   └── useScene.ts           Hook que conecta la animación con cada escena
+└── content.ts                Todos los textos
+public/                       Imágenes (saldo.png, derbiplay.webp)
 ```
