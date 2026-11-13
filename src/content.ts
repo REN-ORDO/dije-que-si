@@ -11,6 +11,9 @@ export const site = {
     "Cómo pasé de no saber programar a construir proyectos que usan miles de personas.",
   author: "Sebastian Ordoñez Gonzalez",
   authorLine: "Ingeniería de Sistemas · cuarto semestre · Barranquilla",
+  /** Foto (en /public) que aparece en el cierre. Pon null para ocultarla. */
+  photo: "/sebastian.webp" as string | null,
+  photoAlt: "Foto de Sebastian Ordoñez Gonzalez",
   keyboardHint: "Avanza con las flechas o la barra espaciadora",
   fullscreenHint: "F para pantalla completa",
 };
@@ -207,6 +210,8 @@ export const closing = {
     "Si aparece una oportunidad que te interesa, atrévete a aceptarla, incluso si todavía estás aprendiendo. No tienes que tener todo resuelto para dar el primer paso.",
   finalTitle: ["Dije", "que", "sí."],
   finalAccentIndex: 2,
+  /** Etiqueta junto a la foto del cierre. */
+  photoLabel: "Este soy yo",
   finalLine:
     "Con motivación y buen uso de la IA se puede empezar, aunque todavía estés aprendiendo.",
 };

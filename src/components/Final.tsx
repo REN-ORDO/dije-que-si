@@ -92,6 +92,28 @@ export function Final() {
       );
       tl.to(sparks, { rotation: 14, duration: 3, stagger: 0.3, ease: "sine.inOut" }, ">-0.2");
       tl.fromTo(fades, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: "expo.out" }, "-=0.8");
+      // "Este soy yo": the photo pops in, then the arrow draws toward it.
+      const me = root.querySelector("[data-final-me]");
+      if (me) {
+        tl.fromTo(
+          me.querySelector(".final-me-photo"),
+          { opacity: 0, scale: 0.6, rotate: -8 },
+          { opacity: 1, scale: 1, rotate: 0, duration: 1.1, ease: "back.out(1.7)" },
+          landed + 1.2
+        );
+        tl.fromTo(
+          me.querySelectorAll(".final-me-arrow path"),
+          { strokeDasharray: 1, strokeDashoffset: 1 },
+          { strokeDashoffset: 0, duration: 0.8, stagger: 0.35, ease: "power2.inOut" },
+          landed + 1.7
+        );
+        tl.fromTo(
+          me.querySelector(".final-me-label"),
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" },
+          landed + 1.9
+        );
+      }
       // The closing should land briskly: play the whole intro faster.
       tl.timeScale(1.5);
       tl.pause(0);
@@ -126,9 +148,27 @@ export function Final() {
           </svg>
         </div>
         <SplitTitle as="h2" words={closing.finalTitle} accentIndex={closing.finalAccentIndex} />
-        <p className="final-line" data-final-fade>
-          {closing.finalLine}
-        </p>
+        <div className="final-row">
+          <p className="final-line" data-final-fade>
+            {closing.finalLine}
+          </p>
+          {site.photo && (
+            <figure className="final-me" data-final-me>
+              <div className="final-me-photo">
+                <span className="final-me-orbit" aria-hidden="true" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={site.photo} alt={site.photoAlt} width={720} height={720} loading="lazy" />
+              </div>
+              <figcaption className="final-me-label">
+                <svg className="final-me-arrow" viewBox="0 0 90 60" aria-hidden="true">
+                  <path pathLength={1} d="M84 52 C70 54 40 50 26 30 C20 21 18 14 17 6" />
+                  <path pathLength={1} d="M8 15 L17 5 L26 14" />
+                </svg>
+                {closing.photoLabel}
+              </figcaption>
+            </figure>
+          )}
+        </div>
       </div>
       <footer className="final-foot" data-final-fade>
         <strong>{site.author}</strong>
