@@ -3,6 +3,7 @@
 import Lenis from "lenis";
 import { useEffect, useRef, useState } from "react";
 import { navItems } from "@/content";
+import { Companion } from "@/components/companion/Companion";
 import {
   MQ,
   ScrollTrigger,
@@ -149,6 +150,7 @@ export function Experience({ children }: { children: React.ReactNode }) {
       <div className="mobile-chapter" aria-hidden="true">
         {String(active + 1).padStart(2, "0")} / {String(navItems.length).padStart(2, "0")}
       </div>
+      <Companion />
       {children}
       <div className="grain" aria-hidden="true" />
     </>
