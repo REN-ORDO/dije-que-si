@@ -161,8 +161,9 @@ export function Final() {
               </div>
               <figcaption className="final-me-label">
                 <svg className="final-me-arrow" viewBox="0 0 90 60" aria-hidden="true">
-                  <path pathLength={1} d="M84 52 C70 54 40 50 26 30 C20 21 18 14 17 6" />
-                  <path pathLength={1} d="M8 15 L17 5 L26 14" />
+                  {/* Curves right → left and lands pointing at the photo. */}
+                  <path pathLength={1} d="M86 44 C70 10 40 8 12 26" />
+                  <path pathLength={1} d="M16.5 15 L12 26 L24 26.5" />
                 </svg>
                 {closing.photoLabel}
               </figcaption>
